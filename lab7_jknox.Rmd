@@ -22,12 +22,6 @@ upadte yo.
 
 <<<<<<< HEAD
 editing line 18. jknox 
->>>>>>> 8956d7e06ab1602bb05495bb773e53e59d7bafe0
-=======
-It's Nakoko y'all
-
-editing line 18. jknox 
->>>>>>> 04f4feed6e4ecbfd5237358ac6d15d6622a6f449
 
 
 
@@ -46,4 +40,31 @@ rownames(get_guns) <- c("Female", "Male")
 
 
 ```
+
+
+I'm the collaborator (Nakoa) and I am going to chi-square test for the gun control data
+
+Phrasing the question (multiple ways)
+Is there a significant difference in gun control perspectives (as related to access to guns) for males and females?
+
+Is there a significant association between sex and gun control recommendations?
+
+Is perception of gun control access independent of sex?
+
+Chi-Square
+```{r}
+# create a table of proportions by row (based on responses by gender) . prop.table wants to work with a matrix data structure, not a tible
+guns_prop <- prop.table(as.matrix(get_guns), 1) # only calculate proportions across rows
+
+guns_prop
+
+# Performing chi-square (very easy with contingency table set up like get_guns)
+
+guns_x2 <- chisq.test(get_guns)
+guns_x2
+
+# H0: sex is independent of gun access preference
+
+```
+Recommended gov. action on gun access differs significantly for males and females ($\chi^2$(`r guns_x2$parameter`) = ...., p < 0.001, $\alpha$ = 0.05). Fifty-seven percent of females responded that access to guns should be more difficult, which 40 percent of male respondents agreed with. 
 
