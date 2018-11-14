@@ -13,6 +13,12 @@ knitr::opts_chunk$set(echo = TRUE)
 
 Sup Superbad. 
 
+<<<<<<< HEAD
 
 Hallo friends
 this is line 18
+=======
+upadte yo.
+
+editing line 18. jknox 
+>>>>>>> 8956d7e06ab1602bb05495bb773e53e59d7bafe0
