@@ -20,5 +20,30 @@ this is line 18
 =======
 upadte yo.
 
+<<<<<<< HEAD
 editing line 18. jknox 
 >>>>>>> 8956d7e06ab1602bb05495bb773e53e59d7bafe0
+=======
+It's Nakoko y'all
+
+editing line 18. jknox 
+>>>>>>> 04f4feed6e4ecbfd5237358ac6d15d6622a6f449
+
+
+
+```{r}
+library(tidyverse)
+gc_df <- read_csv("gc_df.csv")
+
+
+get_guns <- gc_df %>% 
+  filter(gender != "NA", make_get_guns != "NA")  %>% 
+  count(gender, make_get_guns) %>% 
+  spread(make_get_guns, n) %>% 
+  select(-gender)
+
+rownames(get_guns) <- c("Female", "Male")
+
+
+```
+
